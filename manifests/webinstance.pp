@@ -17,7 +17,7 @@ class r_cacti::webinstance inherits r_cacti {
 
   case $osfamily {
     'Debian': {
-      #include r_cacti::webinstance::debian
+      include r_cacti::webinstance::debian
     }
     default: {
       fail("Unknown \$osfamily: ${osfamily}")
