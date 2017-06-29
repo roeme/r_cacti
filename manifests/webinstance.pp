@@ -16,6 +16,7 @@ class r_cacti::webinstance inherits r_cacti {
   }
 
   include r_cacti::install_source
+  include r_cacti::deploy_config
 
   case $osfamily {
     'Debian': {
