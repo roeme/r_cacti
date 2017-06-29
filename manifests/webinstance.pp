@@ -4,6 +4,7 @@
 class r_cacti::webinstance inherits r_cacti {
   if $mkvhost {
     include apache
+    include apache::mod::php
     apache::vhost { 'cacti-vhost':
       vhost_name    => '*',
       port          => '80',
