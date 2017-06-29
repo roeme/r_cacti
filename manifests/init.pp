@@ -52,6 +52,7 @@ class r_cacti(
   Boolean $mkusergroup       = true,
   Boolean $mkvhost           = true,
   Optional[String] $vhostdomain = undef,
+  String  $sub_url           = '/',
   Optional[String] $httpd_group = undef,
   Boolean $manage_packages   = true,
   Enum['mysql']  $db_type    = 'mysql',
