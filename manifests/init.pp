@@ -50,6 +50,8 @@ class r_cacti(
   String  $cacti_user        = 'cacti',
   String  $cacti_group       = 'cacti',
   Boolean $mkusergroup       = true,
+  Boolean $mkvhost           = true,
+  Optional[String] $vhostdomain = undef
   Optional[String] $httpd_group = undef
   ) {
 }
