@@ -44,7 +44,7 @@
 #
 class r_cacti(
   String  $version           = "1.1.10",
-  String  $target_dir_base   = "/usr/share/local",
+  String  $target_dir_base   = "/usr/local/share",
   String  $relsource         = "https://github.com/Cacti/cacti/archive/release/${version}.tar.gz",
   Boolean $setup_link_varlog = true,
   String  $cacti_user        = 'cacti',
