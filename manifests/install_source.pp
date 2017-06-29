@@ -3,7 +3,7 @@
 #
 class r_cacti::install_source inherits r_cacti {
   include archive
-  archive { 'cacti-source':
+  archive { "/tmp/cacti-source-${version}.tar.gz":
     ensure        => present,
     extract       => true,
     extract_path  => "${target_dir_base}",
