@@ -42,7 +42,14 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class r_cacti {
-
-
+class r_cacti(
+  String  $version           = "1.1.10",
+  String  $target_dir_base   = "/usr/share/local",
+  String  $relsource         = "https://github.com/Cacti/cacti/archive/release/${version}.tar.gz",
+  Boolean $setup_link_varlog = true,
+  String  $cacti_user        = 'cacti',
+  String  $cacti_group       = 'cacti',
+  Boolean $mkusergroup       = true,
+  Optional[String] $httpd_group = undef
+  ) {
 }
