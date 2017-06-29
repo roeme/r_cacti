@@ -14,9 +14,9 @@
 
 ## Description
 
-Start with a one- or two-sentence summary of what the module does and/or what
-problem it solves. This is your 30-second elevator pitch for your module.
-Consider including OS/Puppet version it works with.
+This module does a vanilla install of cacti. It follows the KISS principle, and
+tries to change as little as possible, to cacti, the underlying O/S and your
+environment.
 
 You can give more descriptive information in a second paragraph. This paragraph
 should answer the questions: "What does this module *do*?" and "Why would I use
