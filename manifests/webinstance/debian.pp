@@ -7,6 +7,9 @@ class r_cacti::webinstance::debian inherits r_cacti::webinstance {
       'libapache2-mod-php7.0',
       'php7.0',
       'php7.0-mysql',
-      'php7.0-mbstring'],{'ensure' => 'present'})
+      'php7.0-mbstring',
+      'php7.0-xml',
+      'php7.0-gd',
+      'php7.0-ldap'],{'ensure' => 'present'})
   }
 }
