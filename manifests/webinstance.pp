@@ -6,6 +6,7 @@ class r_cacti::webinstance inherits r_cacti {
     include apache
     apache::vhost { 'cacti-vhost':
       vhost_name    => '*',
+      port          => '80',
       docroot       => "${target_dir_base}/cacti",
       docroot_owner => $cacti_user,
       docroot_group => $cacti_group,
