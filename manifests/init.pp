@@ -52,7 +52,7 @@ class r_cacti(
   Boolean $mkusergroup       = true,
   Boolean $mkvhost           = true,
   Optional[String] $vhostdomain = undef,
-  Optional[String] $httpd_group = undef
+  Optional[String] $httpd_group = undef,
   Boolean $manage_packages   = true,
   ) {
 }
