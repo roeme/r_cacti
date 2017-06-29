@@ -12,6 +12,7 @@ class r_cacti::webinstance::debian inherits r_cacti::webinstance {
       'php7.0-gd',
       'php7.0-ldap',
       'php7.0-snmp',
-      'php7.0-gmp'],{'ensure' => 'present'})
+      'php7.0-gmp',
+      'rrdtool'],{'ensure' => 'present'})
   }
 }
