@@ -14,6 +14,6 @@ class r_cacti::install_source inherits r_cacti {
   file { "${target_dir_base}/cacti":
     ensure        => 'link',
     target        => "${target_dir_base}/cacti-release-${version}",
-    require       => Archive['cacti-source'],
+    require       => Archive["/tmp/cacti-source-${version}.tar.gz"],
   }
 }
