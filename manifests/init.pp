@@ -54,5 +54,12 @@ class r_cacti(
   Optional[String] $vhostdomain = undef,
   Optional[String] $httpd_group = undef,
   Boolean $manage_packages   = true,
+  Enum['mysql']  $db_type    = 'mysql',
+  String  $db_user,
+  String  $db_pass,
+  String  $db_host,
+  String  $db_name = 'cacti',
+  Integer $db_port = 3306,
+  Boolean $db_ssl  = false,
   ) {
 }
