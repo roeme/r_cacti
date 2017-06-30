@@ -22,8 +22,13 @@ class r_cacti::install_source inherits r_cacti {
     group        => 'root',
     mode         => '0775',
   }
+  file { '/var/log/cacti/.htaccess':
+    ensure  => file,
+    source  => "puppet:///modules/r_cacti/htdeny",
+  }
   file { "${::r_cacti::target_dir_base}/cacti/log":
     ensure  => link,
+    force   => true,
     target  => '/var/log/cacti',
     require => File["${::r_cacti::target_dir_base}/cacti"],
   }
