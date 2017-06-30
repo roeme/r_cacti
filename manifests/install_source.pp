@@ -18,7 +18,7 @@ class r_cacti::install_source inherits r_cacti {
   }
   file { '/var/log/cacti':
     ensure       => 'directory',
-    owner        => 'cacti',
+    owner        => "${::r_cacti::cacti_user}",
     group        => 'root',
     mode         => '0775',
   }

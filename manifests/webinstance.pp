@@ -15,6 +15,9 @@ class r_cacti::webinstance inherits r_cacti {
     }
   }
 
+  if $::r_cacti::mkusergroup {
+    include r_cacti::user_and_group
+  }
   include r_cacti::install_source
   include r_cacti::deploy_config
 
