@@ -68,8 +68,14 @@ class r_cacti(
 
   case $osfamily {
     'Debian': {
-      unless $webserver_user { $webserver_user   = 'apache' }
-      unless $webserver_group { $webserver_group  = 'apache' }
+      $httpd_user = $webserver_user ? {
+        undef   => 'apache',
+        default => $webserver_user,
+      }
+      $httpd_group = $webserver_group ? {
+        undef   => 'apache',
+        default => $webserver_group,
+      }
     }
     default: {
       fail("Unknown \$osfamily: ${osfamily}")

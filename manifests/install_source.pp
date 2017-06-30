@@ -19,7 +19,7 @@ class r_cacti::install_source inherits r_cacti {
   file { '/var/log/cacti':
     ensure       => 'directory',
     owner        => "${::r_cacti::cacti_user}",
-    group        => "${::r_cacti::webserver_group}",
+    group        => "${::r_cacti::httpd_group}",
     mode         => '0775',
   }
   file { '/var/log/cacti/.htaccess':
