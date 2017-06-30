@@ -25,6 +25,6 @@ class r_cacti::install_source inherits r_cacti {
   file { "${::r_cacti::target_dir_base}/cacti/log":
     ensure  => link,
     target  => '/var/log/cacti',
-    require => "${::r_cacti::target_dir_base}/cacti",
+    require => File["${::r_cacti::target_dir_base}/cacti"],
   }
 }
