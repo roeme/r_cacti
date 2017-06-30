@@ -50,6 +50,8 @@ class r_cacti(
   String  $cacti_user        = 'cacti',
   String  $cacti_group       = 'cacti',
   Boolean $mkusergroup       = true,
+  Optional[String]  $webserver_user,
+  Optional[String]  $webserver_group,
   Boolean $mkvhost           = true,
   Optional[String] $vhostdomain = undef,
   String  $sub_url           = '/',
@@ -63,4 +65,14 @@ class r_cacti(
   Integer $db_port = 3306,
   Boolean $db_ssl  = false,
   ) {
+
+  case $osfamily {
+    'Debian': {
+      $webserver_user   = 'apache'
+      $webserver_group  = 'apache'
+    }
+    default: {
+      fail("Unknown \$osfamily: ${osfamily}")
+    }
+  }
 }
