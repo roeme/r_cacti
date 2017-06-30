@@ -50,8 +50,8 @@ class r_cacti(
   String  $cacti_user        = 'cacti',
   String  $cacti_group       = 'cacti',
   Boolean $mkusergroup       = true,
-  Optional[String]  $webserver_user,
-  Optional[String]  $webserver_group,
+  Optional[String]  $webserver_user   = undef,
+  Optional[String]  $webserver_group  = undef,
   Boolean $mkvhost           = true,
   Optional[String] $vhostdomain = undef,
   String  $sub_url           = '/',
@@ -68,8 +68,8 @@ class r_cacti(
 
   case $osfamily {
     'Debian': {
-      $webserver_user   = 'apache'
-      $webserver_group  = 'apache'
+      unless $webserver_user { $webserver_user   = 'apache' }
+      unless $webserver_group { $webserver_group  = 'apache' }
     }
     default: {
       fail("Unknown \$osfamily: ${osfamily}")
